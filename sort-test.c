@@ -5,7 +5,7 @@
 
 void sort( int* x_ptr, int* y_ptr )
 {
-  if ( (*x_ptr) < (*y_ptr) ) {
+  if ( (*x_ptr) > (*y_ptr) ) {
     int temp = *x_ptr;
     *x_ptr   = *y_ptr;
     *y_ptr   = temp;
@@ -21,6 +21,12 @@ void test_case_1_basic()
   sort( &a, &b );
   ECE2400_CHECK_INT_EQ( a, 5 );
   ECE2400_CHECK_INT_EQ( b, 9 );
+
+  int c = 7;
+  int d = 3;
+  sort(&c,&d);
+  ECE2400_CHECK_INT_EQ(c,3);
+  ECE2400_CHECK_INT_EQ(d,7);
 }
 
 int main( int argc, char* argv[] )
